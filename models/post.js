@@ -11,6 +11,9 @@ const postSchema = new Schema(
       type: Boolean,
       default: true
     },
+    description: {
+      type: String,
+    },
     topic_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Topic",
@@ -19,6 +22,10 @@ const postSchema = new Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
+    comments: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment",
+    }],
     deletedAt: {
       type: Date,
       default: null
